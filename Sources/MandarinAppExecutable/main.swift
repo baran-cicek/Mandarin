@@ -1,0 +1,3 @@
+import Mandarin
+
+MandarinApp.main()

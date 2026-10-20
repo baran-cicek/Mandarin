@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install helper tools (used by the conversion tests)
+        run: brew install ffmpeg pandoc unar webp
+      - name: Swift version
+        run: swift --version
+      - name: Self-tests
+        run: swift run MandarinSelfTests
+      - name: Build app bundle
+        run: SKIP_TESTS=1 ./build.sh

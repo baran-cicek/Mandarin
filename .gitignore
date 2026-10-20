@@ -1,0 +1,17 @@
+# Build output
+.build/
+dist/
+build/
+*.app
+*.xcuserstate
+DerivedData/
+
+# macOS
+.DS_Store
+
+# Session exports (may contain private content) and user data
+*local-command-caveat*.txt
+*.local
+.env
+.claude/
+clean-export/
